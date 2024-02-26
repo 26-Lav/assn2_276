@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Edit Student</h2>
+        <form th:action="@{/students/{id}(id=${student.id})}" th:object="${student}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="Student Name" required>
+
+            <!-- More input fields for other attributes, similar to the add-student.html -->
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<!--<form th:action="@{/students/delete/{id}(id=${student.id})}" method="post">
+  <input type="submit" value="Delete" />
+</form>
+-->

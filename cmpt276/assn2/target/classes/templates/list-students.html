@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Students</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <a href="#" class="delete-link" data-id="${student.id}" data-csrf="${_csrf.token}">Delete</a>
+
+    <!--<a href="#" class="delete-link" th:data-id="${student.id}" th:data-csrf="${_csrf.token}">Delete</a>-->
+
+</head>
+<body>
+    <div class="container">
+        <h2>List of Students</h2>
+        <a href="/students/add" class="add-student-button">Add New Student</a>
+        <div class="students-list">
+            <div th:each="student : ${students}" class="student-card" th:style="'--hair-color:' + ${student.hairColor}">
+                <span class="student-name" th:text="${student.name}">Student Name</span>
+                <span class="student-gpa" th:text="${student.gpa}">GPA</span>
+                <div class="student-actions">
+                    <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+                    <a th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+<script src="/js/student-actions.js"></script>
+</html>

@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.students-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.student-card {
+  width: 200px; /* Adjust width as needed */
+  border: 3px solid black;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.student-name {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.student-gpa {
+  font-size: 24px;
+  color: black;
+}
+
+.edit-button,
+.delete-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-student-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+/* Additional style for color-coding based on hair color or other attributes */
+.student-card[data-hair-color="red"] {
+  background-color: #ff0000;
+}
+
+.student-card[data-hair-color="blue"] {
+  background-color: #0000ff;
+}
+
+.student-card[data-hair-color="green"] {
+  background-color: #008000;
+}
+
+/* Add any additional hair color styles as needed */
+
+/* Ensure buttons are styled according to the drawing */
+.edit-button {
+  background-color: #ff8c00; /* Dark orange */
+}
+
+.delete-button {
+  background-color: #ff0000; /* Red */
+}

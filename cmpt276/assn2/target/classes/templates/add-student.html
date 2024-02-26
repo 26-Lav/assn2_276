@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add New Student</h2>
+        <form th:action="@{/students}" th:object="${student}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="Student Name" required>
+
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" th:field="*{weight}" placeholder="Student Weight">
+
+            <label for="height">Height:</label>
+            <input type="number" id="height" th:field="*{height}" placeholder="Student Height">
+
+            <label for="hairColor">Hair Color:</label>
+            <input type="text" id="hairColor" th:field="*{hairColor}" placeholder="Hair Color">
+
+            <label for="gpa">GPA:</label>
+            <input type="number" step="0.01" id="gpa" th:field="*{gpa}" placeholder="GPA">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
